@@ -28,7 +28,7 @@ void OnTimer()
               {S_TRADE.PositionModify(_Symbol, SL, NULL);}
             else {}
             // TrailingStop
-            if(NSL > PositionGetDouble(POSITION_SL) && ASK < BuyRange)
+            if(NSL > PositionGetDouble(POSITION_SL) && SymbolInfoDouble(_Symbol,SYMBOL_ASK) < BuyRange)
               {S_TRADE.PositionModify(_Symbol, NSL, NULL);}
             else {}
           }
@@ -44,7 +44,7 @@ void OnTimer()
               {S_TRADE.PositionModify(_Symbol, SL, NULL);}
             else {}
             // TrailingStop
-            if(NSL < PositionGetDouble(POSITION_SL) && BID > SellRange)
+            if(NSL < PositionGetDouble(POSITION_SL) && SymbolInfoDouble(_Symbol,SYMBOL_BID) > SellRange)
               {S_TRADE.PositionModify(_Symbol, NSL, NULL);}
             else {}
           }
