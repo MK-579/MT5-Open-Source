@@ -1,6 +1,6 @@
 #include <Trade/Trade.mqh>
 CTrade S_TRADE;
-void OnTimer()
+void OnTick()
   {
     double
       ISpread = MathCeil((SymbolInfoDouble(_Symbol,SYMBOL_ASK)-SymbolInfoDouble(_Symbol,SYMBOL_BID))/_Point),
